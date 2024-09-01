@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>CS2EZSpawn.Test</RootNamespace>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="xunit.runner.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.0" />
+    <PackageReference Include="xunit.v3" Version="0.3.0-pre.18" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.0.0-pre.30" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CS2EZSpawn.Utils\CS2EZSpawn.Utils.csproj"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\spawns.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>spawns.json</Link>
+    </Content>
+  </ItemGroup>
+
+</Project>
