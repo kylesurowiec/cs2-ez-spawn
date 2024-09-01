@@ -19,6 +19,6 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore CS2EZSpawns
+      run: dotnet build CS2EZSpawns --no-restore
     - name: Test
       run: dotnet test CS2EZSpawns.Test --no-build --verbosity normal
