@@ -4,18 +4,16 @@ using System.Text.Json.Serialization;
 
 namespace CS2EZSpawn.Utils;
 
-public class MapModel
+public class TeamSpawnConfig
 {
-    public Dictionary<string, MapData> Maps { get; set; } = new Dictionary<string, MapData>();
+    [JsonPropertyName("t")]
+    public SpawnConfig T { get; set; } = null!;
+
+    [JsonPropertyName("ct")]
+    public SpawnConfig CT { get; set; } = null!;
 }
 
-public class MapData
-{
-    public TeamData T { get; set; } = null!;
-    public TeamData Ct { get; set; } = null!;
-}
-
-public class TeamData
+public class SpawnConfig
 {
     [JsonPropertyName("best_a")]
     [JsonConverter(typeof(Vector3Converter))]
@@ -30,33 +28,13 @@ public class TeamData
     public List<Vector3> Spawns { get; set; } = null!;
 }
 
-public class Program
+public class Config
 {
-    public static async Task Main(string[] args)
+    public static async Task<TeamSpawnConfig?> GetConfigForMap(string map)
     {
-        var mapName = "de_ancient";
+        var jsonStr = await File.ReadAllTextAsync("spawns.json");
+        var de = JsonSerializer.Deserialize<Dictionary<string, TeamSpawnConfig>>(jsonStr);
 
-        var jsonString = await File.ReadAllTextAsync("spawns.json");
-        if (jsonString is null)
-        {
-            throw new ArgumentException("");
-        }
-
-        var mapModel = JsonSerializer.Deserialize<MapModel>(jsonString);
-        if (mapModel is null)
-        {
-            throw new ArgumentException("");
-        }
-
-        if (mapModel.Maps.TryGetValue(mapName, out var mapData))
-        {
-            Console.WriteLine($"T BestA: {mapData.T.BestA}");
-            Console.WriteLine($"T Spawn 1: {mapData.T.Spawns[0]}");
-        }
-        else
-        {
-            Console.WriteLine($"Map '{mapName}' not found.");
-        }
+        return de?[map];
     }
 }
-

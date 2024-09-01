@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CS2EZSpawn.Utils.csproj"/>
+    <ProjectReference Include="..\CS2EZSpawn.Utils\CS2EZSpawn.Utils.csproj"/>
   </ItemGroup>
 
 </Project>

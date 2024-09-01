@@ -23,7 +23,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CS2EZSpawn.Utils.csproj"/>
+    <ProjectReference Include="..\CS2EZSpawn.Utils\CS2EZSpawn.Utils.csproj"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\spawns.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>spawns.json</Link>
+    </Content>
   </ItemGroup>
 
 </Project>
