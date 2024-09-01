@@ -1,7 +1,7 @@
 using System.Numerics;
 using CS2EZSpawn.Utils;
 
-namespace CS2EZSpawn.Tests;
+namespace CS2EZSpawn.Test;
 
 public class ConfigParserTest
 {
