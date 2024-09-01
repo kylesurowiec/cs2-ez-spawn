@@ -1,8 +1,8 @@
 ﻿using CounterStrikeSharp.API.Core;
 
-namespace CS2EZSpawns;
+namespace CS2EZSpawn;
 
-public class CS2EZSpawns : BasePlugin
+public class CS2EZSpawn : BasePlugin
 {
     public override string ModuleName => "CS2 EZ Spawns";
     public override string ModuleVersion => "0.0.1";
