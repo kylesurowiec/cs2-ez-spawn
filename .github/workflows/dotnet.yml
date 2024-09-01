@@ -16,10 +16,10 @@ jobs:
         dotnet-version: 8.0.x
         
     - name: Restore dependencies
-      run: dotnet restore CS2EZSpawns
+      run: dotnet restore CS2EZSpawn
       
     - name: Build
-      run: dotnet build CS2EZSpawns --no-restore
+      run: dotnet build CS2EZSpawn --no-restore
       
     - name: Test
-      run: dotnet test CS2EZSpawns.Test --no-build --verbosity normal
+      run: dotnet test CS2EZSpawn.Test --no-build --verbosity normal
