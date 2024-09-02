@@ -1,15 +1,12 @@
 using System.Numerics;
-using CS2EZSpawn.Utils;
+using CS2EZSpawn.Lib;
 
 namespace CS2EZSpawn.Test;
 
-public class ConfigParserTest
+public class ConfigParserTest : BaseTestWithLogger
 {
-    private readonly ITestOutputHelper output;
-
-    public ConfigParserTest(ITestOutputHelper output)
+    public ConfigParserTest(ITestOutputHelper output) : base(output)
     {
-        this.output = output;
     }
 
     [Fact]
@@ -25,4 +22,3 @@ public class ConfigParserTest
         Assert.True(spawns.CT.Spawns.Count() == 5, "Expected 5 spawn coordinates for de_ancient.");
     }
 }
-

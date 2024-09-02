@@ -2,7 +2,7 @@ using System.Numerics;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace CS2EZSpawn.Utils;
+namespace CS2EZSpawn.Lib;
 
 public class Vector3Converter : JsonConverter<Vector3>
 {
